@@ -1,0 +1,13 @@
+# BEGIN PHASE4B ACTIVATION
+SetEnv POS_PENDING_ENABLED 1
+# END PHASE4B ACTIVATION
+Options -Indexes
+RewriteEngine On
+RewriteRule (^|/)\. - [F,END]
+# Keep local development, repository and recovery files; never serve them.
+RewriteRule (^|/)(?:\.git|\.svn|\.hg|\.codex|\.agents|\.aws|backups?|tests)(?:/|$) - [F,END,NC]
+RewriteRule (^|/)(?:\.env(?:\.[^/]*)?|\.ht[^/]*|composer\.(?:json|lock)|package(?:-lock)?\.json)$ - [F,END,NC]
+RewriteRule \.(?:sql|bak|backup|old|orig|save|swp|swo|ini|env|conf|ya?ml|toml|log|sqlite3?|db|zip|7z|tar|gz|rar)(?:\.|~|/|$) - [F,END,NC]
+RewriteRule (^|/)(?:config(?:uration)?\.(?:php|json|xml)|error_log|php_error_log)$ - [F,END,NC]
+RewriteRule (^|/)(?:connection|connect|security|secure_upload|staff_registration|ingredient_recipe_service|inventory_stock|catalog_service|checkout_service|pending_service|pending_schema)\.php(?:/|$) - [F,END,NC]
+Header always set X-Content-Type-Options "nosniff"

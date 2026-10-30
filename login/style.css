@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #8b6b5a; /* coffee brown background */
+}
+
+/* MAIN CARD */
+.card{
+  width: 420px; /* mas malapad */
+  padding: 12px;
+  border-radius: 20px;
+  background: #ccb39c;
+}
+
+/* INNER CARD */
+.card2{
+  background: #ccb39c;
+  border-radius: 18px;
+  padding: 40px 35px;
+  text-align: center;
+}
+
+/* LOGO */
+.logo{
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: #eee2d5;
+  border: 1px solid #9b7b66;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7a4f35;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* TITLE */
+#heading{
+  color: #5b3d2e;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* INPUTS */
+.field{
+  margin-bottom: 18px;
+}
+
+.input-field{
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #e7d4c3;
+  outline: none;
+  color: #5b3d2e;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.button1{
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #8a6855;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* LINKS */
+.links{
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.links a{
+  text-decoration: none;
+  font-size: 12px;
+  color: #6b4d3f;
+}
+
+/* MESSAGE */
+#msg{
+  margin-top: 10px;
+  color: red;
+  font-size: 13px;
+}

@@ -1,0 +1,53 @@
+/* Batch 1: only Pending controls and Pending uses of the shared modal. */
+.pending-actions,.pending-detail-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.pending-action-btn{white-space:normal;overflow-wrap:anywhere}
+.pending-actions [data-pending-action="retry"]{grid-column:1/-1}
+.pending-view{display:grid;gap:20px;min-width:0}
+.pending-intro{margin:0;color:var(--ui-muted);font-size:13px;line-height:1.5}
+.pending-list{display:grid;gap:20px;min-width:0}
+.pending-order{display:grid;gap:20px;overflow-wrap:anywhere}
+.pending-order-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;min-width:0}
+.pending-order h4{margin:0;font:700 17px/1.4 var(--ui-font);letter-spacing:0}
+.pending-time{margin:5px 0 0;font-size:13px;line-height:1.5;color:var(--ui-muted)}
+.pending-statuses{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:6px}
+.pending-item-head,.pending-item-row{display:grid;grid-template-columns:minmax(0,1fr) 42px minmax(80px,auto) minmax(85px,auto);gap:12px;align-items:start}
+.pending-item-head{padding-bottom:10px;border-bottom:1px solid var(--ui-line);font-size:12px;color:var(--ui-muted);font-weight:600}
+.pending-item-head>span:not(:first-child){text-align:right}
+.pending-item-row{padding:12px 0;border-bottom:1px solid #eee5dc;font-size:14px;line-height:1.5}
+.pending-item-name{min-width:0}.pending-item-name strong{display:block;font-weight:600}.pending-item-name>span{display:block;font-size:13px;color:var(--ui-muted);margin-top:3px}
+.pending-mobile-label{display:none}.pending-summary{margin:0}.pending-card-actions{display:flex;justify-content:flex-end;padding-top:16px;border-top:1px solid var(--ui-line)}
+.pending-card-actions .ui-button{min-width:148px}
+.pending-management-fields{display:grid;gap:16px}.pending-management-fields .ui-note{margin:0}
+.pending-field{margin:0}.pending-detail-actions{margin:0}.pending-detail-actions>button:last-child{grid-column:1/-1}
+.pending-section-title{margin:0;font-size:15px;font-weight:700}
+/* Scope generic modal overrides to Pending content, preserving paid receipt styling. */
+#modal-overlay:has(.pending-view){padding:24px}
+#modal-overlay:has(.pending-view)>.modal{display:flex;flex-direction:column;width:min(760px,100%);min-width:0;max-height:calc(100dvh - 48px);padding:0;border:1px solid var(--ui-line);border-radius:16px;background:var(--ui-surface);overflow:hidden;text-align:left;font-family:var(--ui-font);color:var(--ui-ink)}
+#modal-overlay:has(.pending-management)>.modal{width:min(600px,100%)}
+#modal-overlay:has(.pending-view) #modal-title{flex:none;margin:0;padding:22px 24px;border-bottom:1px solid var(--ui-line);font:700 20px/1.35 var(--ui-font);color:var(--ui-ink)}
+#modal-overlay:has(.pending-view) #modal-body{padding:24px;min-height:0;overflow:auto;overscroll-behavior:contain}
+#modal-overlay:has(.pending-view) .modal>.modal-actions{flex:none;display:flex;justify-content:flex-end;gap:8px;margin:0;padding:16px 24px;border-top:1px solid var(--ui-line);background:var(--ui-surface)}
+#modal-overlay:has(.pending-view) .modal>.modal-actions button{flex:none;min-height:44px;min-width:96px;margin:0;padding:10px 16px;border-radius:8px;font:600 14px/1.35 var(--ui-font)}
+#modal-overlay:has(.pending-view) .modal>.modal-actions button:focus-visible{outline:3px solid #8a4b1e;outline-offset:3px}
+#modal-overlay:has(.pending-list-view,.pending-management) #modal-cancel-btn{display:none}
+@media(max-width:540px){
+ #modal-overlay:has(.pending-view){padding:12px}
+ #modal-overlay:has(.pending-view)>.modal{max-height:calc(100dvh - 24px);border-radius:12px}
+ #modal-overlay:has(.pending-view) #modal-title{padding:18px 16px;font-size:18px}
+ #modal-overlay:has(.pending-view) #modal-body{padding:16px}
+ #modal-overlay:has(.pending-view) .modal>.modal-actions{padding:12px 16px;flex-wrap:wrap}
+ .pending-order-header{gap:10px}.pending-order h4{font-size:16px}.pending-statuses{max-width:125px}
+ .pending-item-head{display:none}.pending-item-row{grid-template-columns:minmax(0,.55fr) minmax(0,1fr) minmax(0,1fr);gap:10px}
+ .pending-item-name{grid-column:1/-1}.pending-mobile-label{display:block;margin-bottom:4px;color:var(--ui-muted);font-size:12px;font-weight:400}
+ .pending-card-actions .ui-button{width:100%;min-width:0}
+}
+@media(max-width:380px){.pending-detail-actions{grid-template-columns:1fr}.pending-item-row{font-size:13px;gap:6px}.pending-statuses{max-width:80px}}
+.right-panel:has(.pending-actions) { overflow-y: auto; }
+.right-panel:has(.pending-actions) .cart-items { min-height: 0; }
+.right-panel:has(.pending-actions) .cart-footer { flex-shrink: 0; }
+@media (max-width: 768px) {
+  .right-panel:has(.pending-actions) { max-height: 60vh; }
+  .main-layout:has(.pending-actions) .left-panel { padding-bottom: 60vh; }
+}
+@media (max-width: 380px) { .pending-detail-actions { grid-template-columns: 1fr; } }
+.toast { pointer-events: none; }

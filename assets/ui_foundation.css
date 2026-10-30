@@ -1,0 +1,20 @@
+/* Gabol's shared presentation primitives. Opt-in classes avoid changing legacy panels. */
+:root{--ui-ink:#1a0f00;--ui-roast:#5c3317;--ui-accent:#c97d30;--ui-cream:#fdf6ee;--ui-surface:#fff9f3;--ui-paper:#fff;--ui-muted:#716052;--ui-line:#dfd1c3;--ui-radius:12px;--ui-space:20px;--ui-font:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.ui-scope{font-family:var(--ui-font);font-size:14px;line-height:1.5;color:var(--ui-ink);text-align:left}
+.ui-scope *{box-sizing:border-box}
+.ui-card{min-width:0;padding:24px;border:1px solid var(--ui-line);border-radius:var(--ui-radius);background:var(--ui-paper)}
+.ui-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 16px;border:1px solid var(--ui-line);border-radius:8px;background:var(--ui-paper);color:var(--ui-roast);font:600 14px/1.35 var(--ui-font);text-align:center;cursor:pointer;touch-action:manipulation}
+.ui-button:hover:not(:disabled){background:var(--ui-cream);border-color:var(--ui-accent)}
+.ui-button:focus-visible,.ui-scope :focus-visible{outline:3px solid #8a4b1e;outline-offset:3px}
+.ui-button:disabled{opacity:.6;cursor:wait}.ui-button[hidden]{display:none}
+.ui-button-primary{background:var(--ui-ink);border-color:var(--ui-ink);color:#fff}
+.ui-button-primary:hover:not(:disabled){background:var(--ui-roast);color:#fff}
+.ui-button-danger{color:#9b3027;border-color:#d8aaa3}
+.ui-badge{display:inline-flex;align-items:center;min-height:26px;border:1px solid transparent;border-radius:6px;padding:3px 8px;font:600 12px/1.4 var(--ui-font);white-space:nowrap}
+.ui-badge-pending{background:#fff0d5;color:#79501a}.ui-badge-unpaid{background:#fff8ec;color:#805114;border-color:#e1cba9}.ui-badge-paid{background:#e7f3ea;color:#245c36}.ui-badge-cancelled{background:#efedeb;color:#5d5852}
+.ui-money{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.ui-summary{display:grid;gap:10px;margin:0}.ui-summary>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline}.ui-summary dt{color:var(--ui-muted)}.ui-summary dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.ui-summary .ui-total{border-top:1px solid var(--ui-line);padding-top:12px;font-size:20px;font-weight:700}.ui-summary .ui-total dt{color:var(--ui-ink)}
+.ui-field{display:grid;gap:7px;min-width:0;font-size:13px;font-weight:600}.ui-field input,.ui-field select,.ui-field textarea{width:100%;min-width:0;min-height:44px;margin:0;padding:10px 12px;border:1px solid #bca996;border-radius:8px;background:#fff;color:var(--ui-ink);font:400 14px/1.4 var(--ui-font)}
+.ui-note{padding:12px 16px;border:1px solid var(--ui-line);border-left:3px solid var(--ui-accent);border-radius:8px;background:#fff8ed;color:var(--ui-roast);font-size:13px;line-height:1.5}
+.ui-empty{display:grid;gap:8px;padding:28px 16px;border:1px solid var(--ui-line);border-radius:var(--ui-radius);background:#fff;text-align:center;color:var(--ui-muted)}.ui-empty strong{font-size:16px;color:var(--ui-ink)}
+@media(max-width:540px){.ui-card{padding:16px}.ui-summary .ui-total{font-size:19px}}

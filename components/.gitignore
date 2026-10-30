@@ -1,0 +1,19 @@
+# Environment and credentials
+.env
+.env.*
+!.env.example
+
+# Database backups
+*.sql
+*.sql.gz
+*.bak
+
+# Uploaded user files
+/uploads/*
+!/uploads/.htaccess
+/assets/uploads/*
+!/assets/uploads/.htaccess
+
+# Temporary files
+*.log
+*.tmp

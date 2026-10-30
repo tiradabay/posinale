@@ -1,0 +1,54 @@
+# Database credentials
+connection.php
+login/connect.php
+.env
+.env.*
+
+# Database backups
+*.sql
+*.sql.gz
+*.bak
+
+# Uploaded images
+/uploads/*
+!/uploads/.htaccess
+/assets/uploads/*
+!/assets/uploads/.htaccess
+
+# Temporary files
+*.log
+*.tmp
+
+# Local backups
+backup/
+backups/
+
+# Exclude isolated testing copies
+/tests/phase4b_live_isolated/
+
+# Exclude sensitive files anywhere
+**/connection.php
+**/connect.php
+**/.env
+**/.env.*
+
+# Exclude uploaded images in nested folders
+**/uploads/*
+!**/uploads/.htaccess
+
+# Exclude database exports
+*.sql
+*.sql.gz
+*.bak
+
+# Exclude local backups
+**/backup/
+**/backups/
+
+# Local test configuration and process files
+/tests/phase4b_live_isolated.conf
+/tests/phase4b_live_isolated.pid
+*.pid
+
+# Exclude test files from GitHub upload
+/tests/
